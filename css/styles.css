@@ -30,6 +30,7 @@ body {
 a {
   text-decoration: none;
 }
+
 h1,
 h2,
 h3,
@@ -37,20 +38,25 @@ p {
   margin: 0;
   padding: 0;
 }
+
 img {
   display: block;
 }
 
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.border {
+  border: 1px solid #ececec;
 }
 
 .conteiner {
   width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .visually-hidden {
@@ -62,6 +68,7 @@ img {
   width: 1px !important;
   overflow: hidden;
 }
+
 /* Студия-главная страница */
 
 /* лого - верхняя линия */
@@ -100,7 +107,9 @@ img {
   align-items: center;
   margin: 0 0 0 85px;
 }
-
+.nav-item {
+  position: relative;
+}
 .nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -126,7 +135,18 @@ img {
 .nav-link.current {
   color: var(--accent-color);
 }
-
+.nav-link.current:after {
+  content: "";
+  display: block;
+  height: 4px;
+  /* width: 48px; */
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 46px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
 .contact {
   display: flex;
   align-items: center;
@@ -299,6 +319,7 @@ img {
 /* секция-Чем мы занимаемся */
 
 .example-box {
+  position: relative;
   width: calc((100% - 30px * 2) / 3);
   margin-right: 30px;
 }
@@ -306,7 +327,11 @@ img {
 .example-box:last-child {
   margin-right: 0;
 }
-
+.ex-text-box {
+  position: absolute;
+  width: 100%;
+  top: 224px;
+}
 .example-text {
   margin: 0;
   padding: 27px 0;
